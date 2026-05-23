@@ -17,4 +17,4 @@ if (argv.some((v) => v === 'help')) {
   process.exit(0)
 }
 
-readAgents()
+readAgents({arg:argObj})
