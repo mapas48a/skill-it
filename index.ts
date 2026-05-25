@@ -1,3 +1,4 @@
+import { makeSkill } from "./scripts/make-skill";
 import { readAgents } from "./scripts/read-agent";
 import { argToObj, type objStruct } from "./utils/arg-to-obj"
 import chalk from 'chalk';
@@ -15,5 +16,6 @@ if (argv.some((v) => v === 'help')) {
     `.padStart(20)));
   process.exit(0)
 }
-argToObj(process.argv)
+
+makeSkill()
 
