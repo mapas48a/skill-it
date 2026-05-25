@@ -4,7 +4,6 @@ import chalk from 'chalk';
 
 const argv = process.argv.slice(2)
 
-const argObj = argToObj(argv) as objStruct
 
 if (argv.some((v) => v === 'help')) {
   console.log(chalk.white(
@@ -16,5 +15,5 @@ if (argv.some((v) => v === 'help')) {
     `.padStart(20)));
   process.exit(0)
 }
+argToObj(process.argv)
 
-readAgents({arg:argObj})
