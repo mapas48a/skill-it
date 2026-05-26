@@ -62,3 +62,16 @@ A good skill improves:
 - execution accuracy,
 - context understanding,
 - and response quality.
+
+## Output Format Rules
+
+When creating a skill, output a complete Markdown document with this structure:
+
+- Title: # Skill Name (clear, descriptive, kebab-case reference)
+- Overview: ## Overview — one paragraph describing purpose
+- Instructions: ## Instructions — step-by-step workflow for the agent
+- Tools/Resources: ## Tools — MCP servers, APIs, or files needed
+- Examples: ## Examples — concrete usage scenarios
+- Constraints: ## Constraints — limitations, edge cases, rules
+
+Every section must be self-contained and actionable by an AI agent. Use proper Markdown syntax (headings, lists, code blocks with language tags, tables). Output ONLY the markdown — no preamble, no concluding text.

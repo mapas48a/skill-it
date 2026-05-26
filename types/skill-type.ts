@@ -1,4 +1,6 @@
 export interface Skilltype {
-  name?:string;
-  error:string;
+  success: boolean
+  name: string
+  messages: string
+  error?: string
 }

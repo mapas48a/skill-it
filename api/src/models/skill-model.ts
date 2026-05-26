@@ -3,5 +3,4 @@ export interface SkillServicesContract {
     url:string;
     prompt?:string;
   } | Record<string,string>;
-  request:Request
 }

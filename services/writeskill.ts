@@ -1,6 +1,5 @@
 import chalk from 'chalk';
-import { createWriteStream } from 'node:fs';
-import {writeFile} from 'node:fs/promises'
+import { writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { argToObj, type objStruct } from '../utils/arg-to-obj';
 import type { Skilltype } from '../types/skill-type';
@@ -11,38 +10,30 @@ export class WriteSKill {
       
       const arg = argToObj(process.argv) as objStruct;
       
-      //fetch api
       const responseAPI = await fetch(
-        `
-        ${process.env.API_URL!}/skill?url=${arg.url}&prompt=${arg.prompt}
-        `);
+        `${process.env.API_URL!}/skill?url=${encodeURIComponent(arg.url ?? '')}&prompt=${encodeURIComponent(arg.prompt ?? '')}`
+      );
 
-        const data = await responseAPI.json() as Skilltype
-        
-        if (!responseAPI.ok) {
-          throw new Error(`Failed to obtain a data for api:${data}`,)
-        }
-        
-        // Create a path
-        const pathSkill = join(skillFolder,`${data.name!}.md`)
-        
-        // Create a file
-        const createSkill = await writeFile(pathSkill,"")
-        .catch(e => {throw Error(e)});
-
-        const writer =  createWriteStream(pathSkill)
-        
-        console.log(createSkill,writer)
-        
-      for await (const chunk of responseAPI.body!) {
-        writer.write(chunk)
+      if (!responseAPI.ok) {
+        throw new Error(`API returned ${responseAPI.status}: ${await responseAPI.text()}`)
       }
+
+      const data = await responseAPI.json() as Skilltype
+
+      console.log(data)
+      if (!data.success) {
+        throw new Error(`Failed to obtain skill: ${data.error || 'unknown error'}`)
+      }
+
+      const pathSkill = join(skillFolder, `${data.name}.md`)
+
+      await writeFile(pathSkill, data.messages, 'utf-8')
+
+      console.log(chalk.green(`Skill created: ${pathSkill}`))
+
     } catch (error) {
       console.log(chalk.red(error))
       process.exit(1)
     }
   }
-
-
-  
 }

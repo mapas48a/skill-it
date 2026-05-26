@@ -1,0 +1,61 @@
+:root {
+  --bg-base: #090910;
+  --bg-card: #0f0f1a;
+  --bg-card-hover: #14141f;
+  --border: #1c1c2e;
+  --border-hover: #2c2c45;
+  --accent: #8b5cf6;
+  --accent-dim: rgba(139, 92, 246, 0.15);
+  --accent-2: #a78bfa;
+  --glow: 0 0 40px rgba(139, 92, 246, 0.2);
+  --text: #eeeef5;
+  --text-muted: #7a7a95;
+  --text-dim: #55556a;
+  --green: #22d3a5;
+  --tag-bg: rgba(139, 92, 246, 0.08);
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg-base);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
