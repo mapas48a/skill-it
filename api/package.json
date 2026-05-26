@@ -6,7 +6,9 @@
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@cerebras/cerebras_cloud_sdk": "^1.64.1",
+    "elysia": "latest",
+    "install": "^0.13.0"
   },
   "devDependencies": {
     "bun-types": "latest"
