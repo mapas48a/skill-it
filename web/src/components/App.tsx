@@ -10,7 +10,7 @@ export function App() {
 
   const handleCopy = () => {
     const textToCopy = activeTab === 'npx'
-      ? 'npx skill-it url https://bun.sh/docs'
+      ? 'npx @mapache47/skill-it url https://bun.sh/docs'
       : 'curl "https://skill-it-nine.vercel.app/skill?url=https://bun.sh/docs&prompt=Do%20it!"';
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
