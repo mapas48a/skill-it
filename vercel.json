@@ -1,12 +1,12 @@
 {
-  "buildCommand": "cd api && bun install && bun run build",
+  "buildCommand": "bun install && bun run build",
   "functions": {
-    "api/dist/index.js": {
+    "dist/index.js": {
       "runtime": "bun",
-      "includeFiles": "api/dist/**"
+      "includeFiles": "dist/**"
     }
   },
   "rewrites": [
-    { "source": "/api/skill", "destination": "/api/dist/index.js" }
+    { "source": "/api/skill", "destination": "dist/index.js" }
   ]
 }
