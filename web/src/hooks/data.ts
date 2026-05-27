@@ -104,7 +104,7 @@ export const sampleSkills: Skill[] = [
     name: 'openai-api-chat',
     description: 'Send chat completions with OpenAI API. Models, tokens, streaming, and error handling.',
     category: 'AI',
-    url: 'https://platform.openai.com/docs/api-reference/chat',
+    url: 'https://platform.openai.com/docs/api-reference/',
     tags: ['openai', 'ai', 'api', 'gpt'],
     date: '2025-04-22',
   },
