@@ -5,7 +5,6 @@ export interface Skill {
   category: string;
   url: string;
   tags: string[];
-  downloads: number;
   date: string;
 }
 
@@ -17,7 +16,6 @@ export const sampleSkills: Skill[] = [
     category: 'Runtime',
     url: 'https://bun.sh/docs/quickstart',
     tags: ['bun', 'runtime', 'javascript'],
-    downloads: 2840,
     date: '2025-05-20',
   },
   {
@@ -27,7 +25,6 @@ export const sampleSkills: Skill[] = [
     category: 'DevOps',
     url: 'https://git-scm.com/book/en/v2',
     tags: ['git', 'version-control', 'cli'],
-    downloads: 5210,
     date: '2025-05-18',
   },
   {
@@ -37,7 +34,6 @@ export const sampleSkills: Skill[] = [
     category: 'Frontend',
     url: 'https://react.dev/reference/react',
     tags: ['react', 'hooks', 'frontend'],
-    downloads: 4300,
     date: '2025-05-15',
   },
   {
@@ -47,7 +43,6 @@ export const sampleSkills: Skill[] = [
     category: 'Language',
     url: 'https://www.typescriptlang.org/docs/handbook/2/generics.html',
     tags: ['typescript', 'generics', 'types'],
-    downloads: 3100,
     date: '2025-05-12',
   },
   {
@@ -57,7 +52,6 @@ export const sampleSkills: Skill[] = [
     category: 'DevOps',
     url: 'https://docs.docker.com/get-started/',
     tags: ['docker', 'containers', 'devops'],
-    downloads: 2780,
     date: '2025-05-10',
   },
   {
@@ -67,7 +61,6 @@ export const sampleSkills: Skill[] = [
     category: 'Backend',
     url: 'https://elysiajs.com/',
     tags: ['elysia', 'api', 'bun', 'backend'],
-    downloads: 1950,
     date: '2025-05-08',
   },
   {
@@ -77,7 +70,6 @@ export const sampleSkills: Skill[] = [
     category: 'Database',
     url: 'https://dev.mysql.com/doc/refman/8.0/en/select.html',
     tags: ['mysql', 'sql', 'database'],
-    downloads: 3600,
     date: '2025-05-05',
   },
   {
@@ -87,7 +79,6 @@ export const sampleSkills: Skill[] = [
     category: 'Frontend',
     url: 'https://vite.dev/config/',
     tags: ['vite', 'build-tool', 'frontend'],
-    downloads: 2100,
     date: '2025-05-03',
   },
   {
@@ -97,7 +88,6 @@ export const sampleSkills: Skill[] = [
     category: 'DevOps',
     url: 'https://git-scm.com/docs/gitignore',
     tags: ['git', 'gitignore', 'devops'],
-    downloads: 1500,
     date: '2025-04-28',
   },
   {
@@ -107,7 +97,6 @@ export const sampleSkills: Skill[] = [
     category: 'Package Managers',
     url: 'https://pnpm.io/',
     tags: ['pnpm', 'npm', 'package-manager'],
-    downloads: 1840,
     date: '2025-04-25',
   },
   {
@@ -117,7 +106,6 @@ export const sampleSkills: Skill[] = [
     category: 'AI',
     url: 'https://platform.openai.com/docs/api-reference/chat',
     tags: ['openai', 'ai', 'api', 'gpt'],
-    downloads: 4100,
     date: '2025-04-22',
   },
   {
@@ -127,7 +115,6 @@ export const sampleSkills: Skill[] = [
     category: 'Backend',
     url: 'https://docs.insforge.com',
     tags: ['insforge', 'backend', 'database'],
-    downloads: 1300,
     date: '2025-04-18',
   },
 ];

@@ -33,6 +33,36 @@
   }
 }
 
+/* Parent lines - slow drift */
+@keyframes lineParentDrift {
+  0%, 100% { transform: translateX(-10%); }
+  50% { transform: translateX(10%); }
+}
+
+/* Child lines - traveling light forward (L→R), fades in/out along the way */
+@keyframes lineChildTravelForward {
+  0% { transform: translateX(-100%); opacity: 0; }
+  8% { opacity: 0.8; }
+  25% { opacity: 0.3; }
+  40% { opacity: 0.9; }
+  60% { opacity: 0.15; }
+  75% { opacity: 0.7; }
+  92% { opacity: 0; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+/* Child lines - traveling light reverse (R→L), fades in/out along the way */
+@keyframes lineChildTravelReverse {
+  0% { transform: translateX(100%); opacity: 0; }
+  8% { opacity: 0.7; }
+  30% { opacity: 0.1; }
+  45% { opacity: 0.85; }
+  65% { opacity: 0.2; }
+  80% { opacity: 0.6; }
+  92% { opacity: 0; }
+  100% { transform: translateX(-100%); opacity: 0; }
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;

@@ -47,14 +47,7 @@ export function SkillCard({ skill, index }: SkillCardProps) {
           </svg>
           View source
         </a>
-        <div className="flex items-center gap-1">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-dim)" strokeWidth="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-          </svg>
-          <span className="text-[12px] text-text-dim">{skill.downloads.toLocaleString()}</span>
-        </div>
+        <span className="text-[11px] text-text-dim">{skill.date}</span>
       </div>
     </article>
   );

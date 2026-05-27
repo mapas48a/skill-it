@@ -11,7 +11,7 @@ export function App() {
   const handleCopy = () => {
     const textToCopy = activeTab === 'npx'
       ? 'npx skill-it url https://bun.sh/docs'
-      : 'curl "http://localhost:3000/skills?url=https://bun.sh/docs&prompt=Do%20it!"';
+      : 'curl "https://skill-it-nine.vercel.app/skill?url=https://bun.sh/docs&prompt=Do%20it!"';
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -55,6 +55,37 @@ export function App() {
 
         <section className="relative py-[100px] pb-20 px-6 text-center overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,var(--color-accent-dim)_0%,transparent_70%)] pointer-events-none" />
+
+          {/* Background Lines Container */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            {[0, 1, 2, 3, 4].map((i) => {
+              const isForward = i % 2 === 0;
+              const topOffset = -90 + i * 45;
+              const baseOpacity = [0.5, 0.7, 0.4, 0.8, 0.55][i];
+              return (
+                <div
+                  key={i}
+                  className="absolute h-px"
+                  style={{
+                    top: `calc(50% + ${topOffset}px)`,
+                    left: '-25%',
+                    width: '150%',
+                    opacity: baseOpacity,
+                  }}
+                >
+                  {/* Traveling light that fades in and out along the way */}
+                  <div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                    style={{
+                      animation: `${isForward ? 'lineChildTravelForward' : 'lineChildTravelReverse'} ${5 + i * 0.8}s ease-in-out infinite`,
+                      animationDelay: `${i * 1.8}s`,
+                    }}
+                  />
+                </div>
+              );
+            })}
+          </div>
+
           <div className="relative max-w-[700px] mx-auto flex flex-col items-center gap-6">
             <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent px-3.5 py-1 rounded-full bg-accent-dim border border-accent/20 uppercase tracking-wide">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--color-accent)"><circle cx="12" cy="12" r="10" /></svg>
@@ -75,8 +106,8 @@ export function App() {
                 <button
                   onClick={() => setActiveTab('npx')}
                   className={`font-mono text-[11px] font-bold px-3.5 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer outline-none focus-visible:ring-1 focus-visible:ring-accent ${activeTab === 'npx'
-                      ? 'border-accent text-accent bg-accent-dim'
-                      : 'border-border text-text-dim hover:text-text-muted hover:border-border-hover bg-transparent'
+                    ? 'border-accent text-accent bg-accent-dim'
+                    : 'border-border text-text-dim hover:text-text-muted hover:border-border-hover bg-transparent'
                     }`}
                 >
                   npx
@@ -84,8 +115,8 @@ export function App() {
                 <button
                   onClick={() => setActiveTab('curl')}
                   className={`font-mono text-[11px] font-bold px-3.5 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer outline-none focus-visible:ring-1 focus-visible:ring-accent ${activeTab === 'curl'
-                      ? 'border-accent text-accent bg-accent-dim'
-                      : 'border-border text-text-dim hover:text-text-muted hover:border-border-hover bg-transparent'
+                    ? 'border-accent text-accent bg-accent-dim'
+                    : 'border-border text-text-dim hover:text-text-muted hover:border-border-hover bg-transparent'
                     }`}
                 >
                   curl
@@ -98,7 +129,7 @@ export function App() {
                 <span className="font-mono text-sm text-text-muted flex-1 text-left min-w-0 break-all md:text-xs">
                   {activeTab === 'npx'
                     ? 'npx skill-it url https://bun.sh/docs'
-                    : 'curl "http://localhost:3000/skills?url=https://bun.sh/docs&prompt=Do%20it!"'}
+                    : 'curl "https://skill-it-nine.vercel.app/skill?url=https://bun.sh/docs&prompt=Do%20it!"'}
                 </span>
                 <button onClick={handleCopy} className="flex items-center gap-1 text-xs text-text-dim bg-transparent border-none cursor-pointer px-1.5 py-0.5 rounded transition-colors duration-200 hover:text-text-muted">
                   {copied ? (
@@ -119,12 +150,21 @@ export function App() {
         </section>
 
         <section className="border-t border-b border-border bg-bg-card">
-          <div className="max-w-[700px] mx-auto px-6 py-8 flex items-center justify-center gap-16 md:flex-col md:gap-6 md:px-4 md:py-6 md:max-w-full">
-            <div className="flex flex-col items-center gap-1 min-w-20 md:flex-row md:gap-2"><span className="text-[28px] font-extrabold text-text">{sampleSkills.length}</span><span className="text-xs text-text-dim tracking-wide min-w-max">Skills Generated</span></div>
-            <div className="w-px h-10 bg-border md:hidden" />
-            <div className="flex flex-col items-center gap-1 min-w-20 md:flex-row md:gap-2"><span className="text-[28px] font-extrabold text-text">{categories.length - 1}</span><span className="text-xs text-text-dim tracking-wide min-w-max">Categories</span></div>
-            <div className="w-px h-10 bg-border md:hidden" />
-            <div className="flex flex-col items-center gap-1 min-w-20 md:flex-row md:gap-2"><span className="text-[28px] font-extrabold text-text">100%</span><span className="text-xs text-text-dim tracking-wide min-w-max">Free & Open Source</span></div>
+          <div className="max-w-full md:max-w-[700px] mx-auto px-4 py-6 md:px-6 md:py-8 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16">
+            <div className="flex flex-row md:flex-col items-center gap-2 md:gap-1 min-w-20">
+              <span className="text-[28px] font-extrabold text-text">{sampleSkills.length}</span>
+              <span className="text-xs text-text-dim tracking-wide min-w-max">Skills Generated</span>
+            </div>
+            <div className="w-full h-px md:w-px md:h-10 bg-border" />
+            <div className="flex flex-row md:flex-col items-center gap-2 md:gap-1 min-w-20">
+              <span className="text-[28px] font-extrabold text-text">{categories.length - 1}</span>
+              <span className="text-xs text-text-dim tracking-wide min-w-max">Categories</span>
+            </div>
+            <div className="w-full h-px md:w-px md:h-10 bg-border" />
+            <div className="flex flex-row md:flex-col items-center gap-2 md:gap-1 min-w-20">
+              <span className="text-[28px] font-extrabold text-text">100%</span>
+              <span className="text-xs text-text-dim tracking-wide min-w-max">Free & Open Source</span>
+            </div>
           </div>
         </section>
 
