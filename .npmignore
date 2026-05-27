@@ -1,0 +1,9 @@
+node_modules/
+dist/
+web/
+api/
+.agents/
+.claude/
+.env.local
+*.test.ts
+*.spec.ts

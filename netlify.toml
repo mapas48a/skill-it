@@ -1,0 +1,12 @@
+[build]
+  command = "cd web && bun install && bun run build"
+  publish = "web/dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+  BUN_VERSION = "latest"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

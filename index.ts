@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { makeSkill } from "./scripts/make-skill";
 import { readAgents } from "./scripts/read-agent";
 import { argToObj, type objStruct } from "./utils/arg-to-obj"

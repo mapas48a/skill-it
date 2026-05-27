@@ -1,18 +1,43 @@
 {
   "name": "skill-it",
-  "module": "index.ts",
-  "devDependencies": {
-    "@types/bun": "latest"
+  "version": "0.0.1",
+  "description": "Transform web documentation into structured, actionable AI skill files. Pass a URL — get a complete markdown skill.",
+  "type": "module",
+  "bin": {
+    "skill-it": "./dist/index.js"
   },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
-  "private": true,
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "bun build index.ts --outdir dist --target node --format esm --external chalk",
+    "prepublishOnly": "bun run build",
     "dev": "bun --watch run index.ts"
   },
-  "type": "module",
+  "keywords": [
+    "ai",
+    "skills",
+    "agents",
+    "documentation",
+    "claude",
+    "copilot",
+    "cli"
+  ],
+  "author": "mapas48",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapas48/skill-it"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "chalk": "^5.6.2"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
   }
 }
