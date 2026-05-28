@@ -1,8 +1,8 @@
 import { status } from "elysia";
-import { client } from "../../lib/client";
-import type { SkillServicesContract } from "../models/skill-model";
-import { formatMarkdownResponse } from "../utils/markdown-formatter";
-import { preContenxt, SYSTEM_PROMPT } from "../data/context";
+import { client } from "../../lib/client.ts";
+import type { SkillServicesContract } from "../models/skill-model.ts";
+import { formatMarkdownResponse } from "../utils/markdown-formatter.ts";
+import { preContenxt, SYSTEM_PROMPT } from "../data/context.ts";
 
 export class SkillServices {
   static async handlerGetSkill({params}:SkillServicesContract) {

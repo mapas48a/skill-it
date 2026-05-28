@@ -1,5 +1,5 @@
 import { Elysia } from "elysia";
-import { SkillServices } from "./services/skill-service";
+import { SkillServices } from "./services/skill-service.ts";
 import cors from "@elysia/cors";
 
 const app = new Elysia()
@@ -56,14 +56,7 @@ const app = new Elysia()
     </html>
   `, { headers: { 'Content-Type': 'text/html; charset=utf-8' } })
   )
-  .listen(3000);
+  .use(cors({ origin: '*' }))
+  .get('/skill', ({ query: params }) => SkillServices.handlerGetSkill({ params }));
 
-app.use(cors({
-  origin:'*'
-}))
-
-app.get('/skill',({query:params})=>SkillServices.handlerGetSkill({params}))
-
-console.log(
-  `Server is running ${app.server?.hostname}:${app.server?.port}`
-);
+Deno.serve({ port: 3000 }, app.fetch);

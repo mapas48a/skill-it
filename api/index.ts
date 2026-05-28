@@ -1,5 +1,5 @@
 import { Elysia } from "elysia";
-import { SkillServices } from "./src/services/skill-service";
+import { SkillServices } from "./src/services/skill-service.ts";
 import cors from "@elysia/cors";
 
 const app = new Elysia()
@@ -7,4 +7,4 @@ const app = new Elysia()
   .get("/", () => "Server is running")
   .get('/skill', ({ query: params }) => SkillServices.handlerGetSkill({ params }));
 
-export default app;
+Deno.serve(app.fetch);
