@@ -11,7 +11,7 @@ export function App() {
   const handleCopy = () => {
     const textToCopy = activeTab === 'npx'
       ? 'npx @mapache47/skill-it url https://bun.sh/docs'
-      : 'curl "https://skill-it-nine.vercel.app/skill?url=https://bun.sh/docs&prompt=Do%20it!"';
+      : 'curl "https://skill-it-xsnzc3g8aec4.mapas48a.deno.net/skill?url=https://bun.sh/docs&prompt=Do%20it!"';
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -129,7 +129,7 @@ export function App() {
                 <span className="font-mono text-sm text-text-muted flex-1 text-left min-w-0 break-all md:text-xs">
                   {activeTab === 'npx'
                     ? 'npx skill-it url https://bun.sh/docs'
-                    : 'curl "https://skill-it-nine.vercel.app/skill?url=https://bun.sh/docs&prompt=Do%20it!"'}
+                    : 'curl "https://skill-it-xsnzc3g8aec4.mapas48a.deno.net/skill?url=https://bun.sh/docs&prompt=Do%20it!"'}
                 </span>
                 <button onClick={handleCopy} className="flex items-center gap-1 text-xs text-text-dim bg-transparent border-none cursor-pointer px-1.5 py-0.5 rounded transition-colors duration-200 hover:text-text-muted">
                   {copied ? (

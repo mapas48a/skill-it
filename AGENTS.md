@@ -31,7 +31,7 @@ cd api && bun install && bun run dev     # Dev server
 
 ## Important
 
-- **Backend URL is hardcoded** in `services/writeskill.ts` to `https://skill-it-nine.vercel.app`. Do not add `.env` usage — it was intentionally removed so the package works without local env config.
+- **Backend URL is hardcoded** in `services/writeskill.ts` to `https://skill-it-xsnzc3g8aec4.mapas48a.deno.net`. Do not add `.env` usage — it was intentionally removed so the package works without local env config.
 - **CLI uses bun** as runtime and bundler (not npm/node scripts).
 - **Web uses Tailwind v4** with `@tailwindcss/vite` plugin, not the classic setup.
 - **API uses Elysia** framework on Bun, deployed on Vercel with bun runtime (`vercel.json`).

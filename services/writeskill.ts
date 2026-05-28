@@ -11,7 +11,7 @@ export class WriteSKill {
       const arg = argToObj(process.argv) as objStruct;
       
       const responseAPI = await fetch(
-        `https://skill-it-nine.vercel.app/skill?url=${encodeURIComponent(arg.url ?? '')}&prompt=${encodeURIComponent(arg.prompt ?? '')}`
+        `https://skill-it-xsnzc3g8aec4.mapas48a.deno.net/skill?url=${encodeURIComponent(arg.url ?? '')}&prompt=${encodeURIComponent(arg.prompt ?? '')}`
       );
 
       if (!responseAPI.ok) {

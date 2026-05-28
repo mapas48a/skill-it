@@ -90,7 +90,7 @@ index.ts
 ```typescript
 export class WriteSKill {
   static async createFile({ skillFolder }: { skillFolder: string }) {
-    const responseAPI = await fetch(`https://skill-it-nine.vercel.app/skill?url=...&prompt=...`)
+    const responseAPI = await fetch(`https://skill-it-xsnzc3g8aec4.mapas48a.deno.net/skill?url=...&prompt=...`)
     const data = await responseAPI.json() as Skilltype
     await writeFile(pathSkill, data.messages, 'utf-8')
   }
