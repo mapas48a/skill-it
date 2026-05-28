@@ -59,4 +59,4 @@ Recommended approach: Use OpenRouter as a proxy layer — it handles provider fa
 
 ## Deploy
 
-Deployed on Vercel with Bun runtime. See `vercel.json` for configuration.
+Deployed on Deno Deploy.
