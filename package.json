@@ -4,7 +4,7 @@
   "description": "Transform web documentation into structured, actionable AI skill files. Pass a URL — get a complete markdown skill.",
   "type": "module",
   "bin": {
-    "skill-it": "./dist/index.js"
+    "skill-it": "dist/index.js"
   },
   "main": "./dist/index.js",
   "files": [
@@ -28,7 +28,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mapas48/skill-it"
+    "url": "git+https://github.com/mapas48/skill-it.git"
   },
   "engines": {
     "node": ">=18.0.0"
