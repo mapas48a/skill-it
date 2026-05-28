@@ -1,6 +1,6 @@
 {
   "name": "@mapache47/skill-it",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Transform web documentation into structured, actionable AI skill files. Pass a URL — get a complete markdown skill.",
   "type": "module",
   "bin": {
