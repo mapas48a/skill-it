@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Cerebras } from "@cerebras/cerebras_cloud_sdk";
+import { client as module } from "../../lib/client.ts";
 
 const SYSTEM_PROMPT = `Eres un asistente especializado en redactar mensajes cortos de WhatsApp.
 Reglas:
@@ -31,13 +31,9 @@ export class AutoWhatServices {
 			};
 		}
 
-		const apiKey = Deno.env.get("CEREBRAS_API_KEY");
-		if (!apiKey) {
-			return { success: false, message: "missing CEREBRAS_API_KEY" };
-		}
-		const model = Deno.env.get("CEREBRAS_MODEL") ?? "llama-3.3-70b";
+		const model = "gpt-oss-120by";
 
-		const client = new Cerebras({ apiKey });
+		const client = module;
 		const completion = await client.chat.completions.create({
 			model,
 			messages: [
