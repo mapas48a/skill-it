@@ -1,15 +1,10 @@
 import Cerebras from '@cerebras/cerebras_cloud_sdk';
-import { config } from "dotenv";
 
-const env = await config({
-  // optional: choose a specific path (defaults to ".env")
-  path: ".env.local",
-  // optional: also export to the process environment (so Deno.env can read it)
-});
+const CEREBRAS_API_KEY = Deno.env.get("CEREBRAS_API_KEY");
 
-
-
-const CEREBRAS_API_KEY = process.env.CEREBRAS_API_KEY
+if (!CEREBRAS_API_KEY) {
+  throw new Error("CEREBRAS_API_KEY is not set");
+}
 
 export const client = new Cerebras({
   apiKey: CEREBRAS_API_KEY,

@@ -4,16 +4,14 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "deno run --watch --allow-net --env-file  src/index.ts",
+    "dev": "deno run --watch --allow-net --allow-env index.ts",
     "start": "deno run --allow-net --allow-env index.ts"
   },
   "dependencies": {
     "@cerebras/cerebras_cloud_sdk": "^1.64.1",
     "@elysia/cors": "^1.4.2",
-    "dotenv": "^17.4.2",
-    "elysia": "latest",
-    "install": "^0.13.0"
+    "elysia": "latest"
   },
   "devDependencies": {},
-  "module": "src/index.js"
+  "module": "index.js"
 }

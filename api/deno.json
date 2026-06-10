@@ -3,11 +3,10 @@
     "elysia": "npm:elysia",
     "@elysia/cors": "npm:@elysia/cors",
     "@cerebras/cerebras_cloud_sdk": "npm:@cerebras/cerebras_cloud_sdk",
-    "zod": "npm:zod",
-    "dotenv":"npm:dotenv"
+    "zod": "npm:zod"
   },
   "tasks": {
-    "dev": "deno run --watch --allow-net --env-file src/index.ts",
+    "dev": "deno run --watch --allow-net --allow-env index.ts",
     "start": "deno run --allow-net --allow-env index.ts"
   }
 }
