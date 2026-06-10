@@ -1,5 +1,6 @@
 import { Elysia } from "elysia";
 import { SkillServices } from "./services/skill-service.ts";
+import { AutoWhatServices } from "./services/auto-what-service.ts";
 import cors from "@elysia/cors";
 
 const app = new Elysia()
@@ -57,6 +58,7 @@ const app = new Elysia()
   `, { headers: { 'Content-Type': 'text/html; charset=utf-8' } })
   )
   .use(cors({ origin: '*' }))
-  .get('/skill', ({ query: params }) => SkillServices.handlerGetSkill({ params }));
+  .get('/skill', ({ query: params }) => SkillServices.handlerGetSkill({ params }))
+  .post('/auto-what', ({ body }) => AutoWhatServices.handlerGenerate({ params: body as Record<string, string> }));
 
 Deno.serve({ port: 3000 }, app.fetch);
