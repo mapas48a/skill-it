@@ -317,6 +317,7 @@
     "dependencies": [
       "npm:@cerebras/cerebras_cloud_sdk@*",
       "npm:@elysia/cors@*",
+      "npm:dotenv@*",
       "npm:elysia@*",
       "npm:zod@*"
     ],

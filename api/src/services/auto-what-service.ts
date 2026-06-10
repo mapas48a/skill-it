@@ -31,7 +31,7 @@ export class AutoWhatServices {
 			};
 		}
 
-		const model = "gpt-oss-120by";
+		const model = "gpt-oss-120b";
 
 		const client = module;
 		const completion = await client.chat.completions.create({
